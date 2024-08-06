@@ -1,0 +1,22 @@
+.imgContainer{ 
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.imgItem{
+    cursor: pointer; 
+    width: auto;
+    height: 100%; 
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+}
+
+.itemTittle{
+    margin-top: 10px;
+}
