@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import '../Item/item.css'
 import {useState} from 'react';
 import { Modal } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom'
 
 
 const Item = ({element}) => {
@@ -16,7 +17,8 @@ const Item = ({element}) => {
   return (
     <>
         <Col key={element.id}>
-            <Card>
+        <Link to={`/Item/${element.id}`} style={{textDecoration: 'none'}}>
+            <Card style={{ boxShadow: '1px 1px 10px 1px #9e9e9e'}}>
                 <Card.Body>
                 <div className='imgContainer'>
                     <Card.Img 
@@ -32,14 +34,11 @@ const Item = ({element}) => {
                     {element.description}
                     </Card.Text>
                 </Card.Body>
-                <ListGroup className="list-group-flush">
-                    <ListGroup.Item>$ {element.price}</ListGroup.Item>
-                </ListGroup>
-                <Card.Body>
-                    <Button variant="primary">Agregar al Carrito</Button>
-                </Card.Body>
+                <ListGroup.Item>$ {element.price}</ListGroup.Item>
             </Card>
+          </Link>
         </Col>
+        
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Imagen Expandida</Modal.Title>

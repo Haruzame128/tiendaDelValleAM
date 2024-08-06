@@ -1,4 +1,4 @@
-export const categories = ["Indumentaria", "Armas", "Equipo", "Contact"]
+export const categories = ["Indumentaria", "Armas", "Equipo", "Contacto"]
 
 export const subCat = ["Traje", "Hakama", "Boken", "Tanto", "Jo", "Cinturon"]
 

@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import Nav from 'react-bootstrap/Nav';
 
-const NavItem = ({name}) => {
+const MlItem = ({name}) => {
   return (
     <>
       <Nav.Link >
@@ -12,4 +10,4 @@ const NavItem = ({name}) => {
   )
 }
 
-export default NavItem
+export default MlItem

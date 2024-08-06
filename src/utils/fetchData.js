@@ -2,10 +2,15 @@ import { products } from "../mock/mockData"
 
 export const getProd = (cat) =>{
     let filteredItems = products
-    if (cat != null){
-    filteredItems = products.filter((products) =>{
-        return products.category.includes(cat)
-    })
+    if (cat != undefined){
+        if (isNaN(cat)){
+            filteredItems = products.filter((products) =>{
+                return products.category.includes(cat)
+        })
+        }else{
+            filteredItems = (products.find(prod => prod.id == cat))
+        }
+        
     }
 
     return new Promise((resolve, reject) => {

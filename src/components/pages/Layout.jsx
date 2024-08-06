@@ -7,11 +7,9 @@ const Layout = ({children}) => {
   return (
     <>
         <NavBar />
-        {children}
-        <Footer />
+          {children}
     </>
   )
-  
 };
 
 export default Layout
