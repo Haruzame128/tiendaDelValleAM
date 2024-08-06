@@ -46,7 +46,7 @@ const SingleItem = ({products}) => {
                 <ListGroup.Item>$ {prod.price}</ListGroup.Item>
                 <Card.Body>
                 <Button variant="secondary">
-                    Agragar al carrito
+                    Agregar al carrito
                 </Button>
                 </Card.Body>
             </Card>
