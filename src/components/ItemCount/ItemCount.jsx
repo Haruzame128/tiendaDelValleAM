@@ -1,26 +1,59 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
-import React from 'react'
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
-function ItemCount() {
-    const [cant, setCant] = useState(1)
+function ItemCount({stock, inicial, handleOnBuy}) {
+    const [cant, setCant] = useState(inicial);
+    const [itemAdded, setItemAdded] = useState(false);
+    const navigate = useNavigate();
     //let cant = 1
-    const handleClicMenos = () => {
+
+    const handleClick = (op) =>{
+        op === "-" ? clickMenos() : clickMas();
+    }
+    const clickMenos = () => {
         if (cant === 1){
             alert("No se puede seleccionar menos de 1 producto")
             return
         }
         setCant(cant - 1)
     }
-    const handleClicMas = () => {
-        setCant(cant + 1)
+    const clickMas = () => {
+        if (cant === stock){
+            alert("No hay mas Stok")
+        }else{
+            setCant(cant + 1)
+        }
     }
 
+    const handleAddToCart = () => {
+        handleOnBuy(cant)
+        //setItemAdded(true)
+    }
+
+    const handleGoToCheckOut = () => {
+        navigate("/cart")
+    }
 
   return (
     <div>
-        <button onClick={handleClicMenos}>-</button>
-        <span>{cant}</span>
-        <button onClick={handleClicMas}>+</button>
+        <button onClick={() => handleClick("-")}>-</button>
+        <span> {cant} </span>
+        <button onClick={() => handleClick("+")}>+</button>
+
+        {!itemAdded ? (
+            <Button variant="secondary" onClick={handleAddToCart}>
+                Agregar al carrito
+            </Button>
+        ) : (
+            <Button variant="secondary" onClick={handleGoToCheckOut}>
+                Ir al Carrito
+             </Button>
+        )
+
+        }
+        
     </div>
   )
 }

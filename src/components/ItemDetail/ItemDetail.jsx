@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import '../ItemDetail/ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount';
+import { useCartContext } from '../../context/CartContext';
 
 const ItemDetail = ({element}) => {
+    const { addToCart } = useCartContext();
+
+
+    const handleOnBuy = (cantidad) => {
+        addToCart(element, cantidad);
+    }
+
     return (
      <Row xs={1} md={1} lg={1} className="g-4" style={{width: '75%', margin: 'auto', textAlign: 'center'}}>
           <Col key={element.id}>
@@ -28,9 +36,7 @@ const ItemDetail = ({element}) => {
                   </Card.Body>
                   <ListGroup.Item>$ {element.price}</ListGroup.Item>
                   <Card.Body>
-                  <Button variant="secondary">
-                      Agregar al carrito
-                  </Button>
+                    <ItemCount stock={element.stock} inicial={1} handleOnBuy={handleOnBuy}/>
                   </Card.Body>
               </Card>
           </Col>
