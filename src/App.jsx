@@ -1,11 +1,10 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
-import { useState } from 'react'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import './App.css'
 import Layout from './components/pages/Layout'
 import Contact from './components/Contact/Contact'
 import Error404 from './components/Error404/Error404'
-import SingleItem from './components/Item/SingleItem'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
           />
           <Route 
             path='/Item/:categoryID'
-            element={<SingleItem />}
+            element={<ItemDetailContainer title={'Producto Seleccionado'}/>}
           />
           <Route 
           path='*'

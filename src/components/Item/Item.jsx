@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import '../Item/item.css'
 import {useState} from 'react';
 import { Modal } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 
 const Item = ({element}) => {
