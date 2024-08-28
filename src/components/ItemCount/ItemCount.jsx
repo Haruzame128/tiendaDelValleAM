@@ -29,7 +29,7 @@ function ItemCount({stock, inicial, handleOnBuy}) {
 
     const handleAddToCart = () => {
         handleOnBuy(cant)
-        //setItemAdded(true)
+        setItemAdded(true)
     }
 
     const handleGoToCheckOut = () => {

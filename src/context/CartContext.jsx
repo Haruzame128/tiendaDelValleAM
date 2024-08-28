@@ -34,8 +34,6 @@ const CartContextProvider = ({children}) =>{
     }
 
     const addToCart = (item, cantidad) => {
-        setCantidadItems((cantidadItems + cantidad))
-        setTotal(total + (item.price * cantidad))
         let newCart = [];
         if (isInCart(item.id)){
             newCart = carrito.map((elem)=>{
@@ -48,23 +46,36 @@ const CartContextProvider = ({children}) =>{
         }else{
             newCart = [...carrito, {...item, cantidad} ]
         }
-        setCarrito(newCart)
-        
-        localStorage.setItem('carrito', JSON.stringify(newCart))
-        localStorage.setItem('total', JSON.stringify(total))
-        localStorage.setItem('cantidad', JSON.stringify(cantidadItems))
+
+        setCantidadItems(cantidadItems => {
+            const nuevaCantidad = cantidadItems + cantidad;
+            localStorage.setItem('cantidad', JSON.stringify(nuevaCantidad)); 
+            return nuevaCantidad;
+        });
+        setTotal(total => {
+            const nuevoTotal = total + (item.price * cantidad);
+            localStorage.setItem('total', JSON.stringify(nuevoTotal));
+            return nuevoTotal;
+        });
+
+        setCarrito(carrito =>{
+            localStorage.setItem('carrito', JSON.stringify(newCart)); 
+            return newCart;
+        })
     }
 
     const removeItem = (id, precio, cantidad) =>{
-        setTotal(total - (precio * cantidad))
-        setCantidadItems(cantidadItems - cantidad)
+        let totalnuevo = total - (precio * cantidad)
+        let cantidadNueva = cantidadItems - cantidad
+        setTotal(totalnuevo)
+        setCantidadItems(cantidadNueva)
 
         const newCart = carrito.filter((elem) => elem.id !== id)
 
         setCarrito(newCart)
         localStorage.setItem('carrito', JSON.stringify(newCart))
-        localStorage.setItem('total', JSON.stringify(total))
-        localStorage.setItem('cantidad', JSON.stringify(cantidadItems))
+        localStorage.setItem('total', JSON.stringify(totalnuevo))
+        localStorage.setItem('cantidad', JSON.stringify(cantidadNueva))
     }
 
     const clearCart = () =>{
@@ -78,8 +89,12 @@ const CartContextProvider = ({children}) =>{
 
     const contextValue = {
         titulo: 'Curso de React',
-        cantidadItems: cantidadItems,
-        addToCart: addToCart
+        cantidadItems,
+        carrito,
+        total,
+        removeItem,
+        clearCart,
+        addToCart
     }
 
 
