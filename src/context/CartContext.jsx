@@ -35,7 +35,6 @@ const CartContextProvider = ({children}) =>{
 
     const addToCart = (item, cantidad) => {
         setCantidadItems((cantidadItems + cantidad))
-        console.log(cantidadItems + cantidad)
         setTotal(total + (item.price * cantidad))
         let newCart = [];
         if (isInCart(item.id)){
@@ -54,15 +53,27 @@ const CartContextProvider = ({children}) =>{
         localStorage.setItem('carrito', JSON.stringify(newCart))
         localStorage.setItem('total', JSON.stringify(total))
         localStorage.setItem('cantidad', JSON.stringify(cantidadItems))
-        console.log(total)
     }
 
-    const removeItem = () =>{
-        return null
+    const removeItem = (id, precio, cantidad) =>{
+        setTotal(total - (precio * cantidad))
+        setCantidadItems(cantidadItems - cantidad)
+
+        const newCart = carrito.filter((elem) => elem.id !== id)
+
+        setCarrito(newCart)
+        localStorage.setItem('carrito', JSON.stringify(newCart))
+        localStorage.setItem('total', JSON.stringify(total))
+        localStorage.setItem('cantidad', JSON.stringify(cantidadItems))
     }
 
     const clearCart = () =>{
-        return null
+        setCantidadItems(0)
+        setCarrito([])
+        setTotal(0)
+        localStorage.removeItem('carrito')
+        localStorage.removeItem('total')
+        localStorage.removeItem('cantidad')
     }
 
     const contextValue = {
