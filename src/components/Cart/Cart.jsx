@@ -37,7 +37,7 @@ const Cart = () => {
                             <td>{cantidad}</td>
                             <td>$ {price}</td>
                             <td>$ {price * cantidad}</td>
-                            <td><Button variant="outline-danger" onClick={() => handleRemoveItems(id, price, cantidad)}>Remover Item</Button></td>
+                            <td><Button variant="outline-danger" size="sm" onClick={() => handleRemoveItems(id, price, cantidad)}>Remover Item</Button></td>
                         </tr>
                     )
                 })
