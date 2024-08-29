@@ -9,12 +9,9 @@ import { useCartContext } from '../../context/CartContext';
 
 const ItemDetail = ({element}) => {
     const { addToCart } = useCartContext();
-
-
     const handleOnBuy = (cantidad) => {
         addToCart(element, cantidad);
     }
-
     return (
      <Row xs={1} md={1} lg={1} className="g-4" style={{width: '75%', margin: 'auto', textAlign: 'center'}}>
           <Col key={element.id}>
