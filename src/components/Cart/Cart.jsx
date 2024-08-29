@@ -7,7 +7,7 @@ import { db } from "../../firebase/dbconection";
 
 const Cart = () => {
   const { carrito, total, removeItem, clearCart } = useCartContext();
-  const [formData, setFormData] = useState()
+  const [formData, setFormData] = useState({namef: "", tel: "", email: ""})
 
   const handleRemoveItems = (id, precio, cantidad) => {
     removeItem(id, precio, cantidad);
@@ -39,7 +39,7 @@ const Cart = () => {
         alert("Orden guardada con el ID: " + doc.id)
         console.log("Orden guardada con el ID: " + doc.id)
         clearCart()
-        setFormData({name: "", tel: "", email: ""})
+        setFormData({namef: "", tel: "", email: ""})
     })
     .catch((error)=>{
         console.error("Error al realizar la compra: ",error)
@@ -102,7 +102,7 @@ const Cart = () => {
                 id="name"
                 name="name"
                 onChange={(e) => handleOnChange(e)}
-                value={formData.name}
+                value={formData.namef}
               ></input>
             </div>
           </div>
