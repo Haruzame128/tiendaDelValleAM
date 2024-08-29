@@ -41,5 +41,4 @@ function App() {
     </CartContextProvider>
   );
 }
-
 export default App;

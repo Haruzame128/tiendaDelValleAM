@@ -3,7 +3,8 @@
 
 import "./ItemDetailContainer.css"
 import { useState, useEffect } from 'react'
-import { getProd } from '../../utils/fetchData'
+import { db } from "../../firebase/dbconection"
+import { collection, getDoc, doc } from "firebase/firestore"
 import { useParams } from 'react-router-dom'
 import ItemDetailList from "../ItemDetailList/ItemDetailList"
 
@@ -13,13 +14,18 @@ function ItemDetailContainer({title}) {
   const {categoryID} = useParams();
 
   useEffect(() => {
-    getProd(categoryID)
-  .then((res)=>{
-    setProd(res)
-  })
-  .catch((err)=>{
-    console.log(err)
-  })   
+   const productCollection = collection(db, "productos")
+   const refDoc = doc(productCollection, categoryID)
+
+   getDoc(refDoc)
+    .then((doc) => {
+      setProd({id: doc.id, ...doc.data()})
+    })
+    .catch((error) => {
+      console.error("Error al obtener el documento: ",error)
+    })
+
+
   }, [categoryID])
 
     return (
