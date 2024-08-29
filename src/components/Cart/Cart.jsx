@@ -35,8 +35,8 @@ const Cart = () => {
                             <td>{id}</td>
                             <td>{name}</td>
                             <td>{cantidad}</td>
-                            <td>{price}</td>
-                            <td>{price * cantidad}</td>
+                            <td>$ {price}</td>
+                            <td>$ {price * cantidad}</td>
                             <td><Button variant="outline-danger" onClick={() => handleRemoveItems(id, price, cantidad)}>Remover Item</Button></td>
                         </tr>
                     )
@@ -44,7 +44,7 @@ const Cart = () => {
             }
             <tr>
             <td colSpan={4}></td>
-            <td>{total}</td>
+            <td>$ {total}</td>
             </tr>
         </tbody>
         </Table>

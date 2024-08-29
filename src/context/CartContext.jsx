@@ -58,7 +58,7 @@ const CartContextProvider = ({children}) =>{
             return nuevoTotal;
         });
 
-        setCarrito(carrito =>{
+        setCarrito(carrito => {
             localStorage.setItem('carrito', JSON.stringify(newCart)); 
             return newCart;
         })

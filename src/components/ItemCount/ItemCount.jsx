@@ -37,15 +37,18 @@ function ItemCount({stock, inicial, handleOnBuy}) {
     }
 
   return (
-    <div>
-        <button onClick={() => handleClick("-")}>-</button>
-        <span> {cant} </span>
-        <button onClick={() => handleClick("+")}>+</button>
-
+    <>
         {!itemAdded ? (
-            <Button variant="secondary" onClick={handleAddToCart}>
+            <>
+            <div style={{marginBottom: '10px'}}>
+            <button onClick={() => handleClick("-")}>-</button>
+            <span> {cant} </span>
+            <button onClick={() => handleClick("+")}>+</button>
+            </div>
+            <Button variant="secondary" onClick={handleAddToCart} >
                 Agregar al carrito
             </Button>
+            </>
         ) : (
             <Button variant="secondary" onClick={handleGoToCheckOut}>
                 Ir al Carrito
@@ -53,8 +56,7 @@ function ItemCount({stock, inicial, handleOnBuy}) {
         )
 
         }
-        
-    </div>
+    </>
   )
 }
 
