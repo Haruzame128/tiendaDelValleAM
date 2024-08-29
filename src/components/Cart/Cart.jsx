@@ -4,10 +4,13 @@ import { Button } from "react-bootstrap";
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/dbconection";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { carrito, total, removeItem, clearCart } = useCartContext();
   const [formData, setFormData] = useState()
+
+  const navigate = useNavigate()
 
   const handleRemoveItems = (id, precio, cantidad) => {
     removeItem(id, precio, cantidad);
@@ -40,6 +43,7 @@ const Cart = () => {
         console.log("Orden guardada con el ID: " + doc.id)
         clearCart()
         setFormData({namef: "", tel: "", email: ""})
+        navigate('/')
     })
     .catch((error)=>{
         console.error("Error al realizar la compra: ",error)
@@ -102,7 +106,7 @@ const Cart = () => {
                 id="name"
                 name="name"
                 onChange={(e) => handleOnChange(e)}
-                value={formData.namef}
+                
               ></input>
             </div>
           </div>
@@ -117,7 +121,7 @@ const Cart = () => {
                 id="tel"
                 name="tel"
                 onChange={(e) => handleOnChange(e)}
-                value={formData.tel}
+                
               ></input>
             </div>
           </div>
@@ -131,7 +135,7 @@ const Cart = () => {
                 className="form-control"
                 id="email"
                 name="email"
-                value={formData.email}
+                
                 onChange={(e) => handleOnChange(e)}
               ></input>
             </div>
