@@ -7,7 +7,7 @@ import { db } from "../../firebase/dbconection";
 
 const Cart = () => {
   const { carrito, total, removeItem, clearCart } = useCartContext();
-  const [formData, setFormData] = useState({namef: "", tel: "", email: ""})
+  const [formData, setFormData] = useState()
 
   const handleRemoveItems = (id, precio, cantidad) => {
     removeItem(id, precio, cantidad);
