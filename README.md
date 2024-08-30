@@ -53,3 +53,9 @@ npm run dev
 [js-web]: https://developer.mozilla.org/es/docs/Web/JavaScript
 [react-badge]: https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge
 [react-web]: https://reactjs.org/
+[bootstrap-badge]: https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=for-the-badge
+[bootstrap-web]: https://getbootstrap.com/
+[vite-badge]: https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=for-the-badge
+[vite-web]: https://vitejs.dev/
+[npm-badge]: https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=for-the-badge
+[npm-web]: https://www.npmjs.com/
