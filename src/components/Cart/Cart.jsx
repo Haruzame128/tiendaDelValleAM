@@ -25,9 +25,6 @@ const Cart = () => {
   }
 
   const handleSaveCart = () => {
-    console.log("saving data base") 
-    console.log(carrito)
-    console.log(formData)
     
     const orderCollection = collection(db, "orders")
     const newOrder = {
@@ -40,7 +37,6 @@ const Cart = () => {
     addDoc(orderCollection, newOrder)
     .then((doc)=>{
         alert("Orden guardada con el ID: " + doc.id)
-        console.log("Orden guardada con el ID: " + doc.id)
         clearCart()
         setFormData({namef: "", tel: "", email: ""})
         navigate('/')
