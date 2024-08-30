@@ -11,7 +11,7 @@ Este es un proyecto de una tienda de E-Commer realizado como proyecto final para
 
 ## Características
 
-Es una Single App Aplication de un sitio web e-commerce basado en productos de artes marciales, aplicando todos los conocimientos adquiridos durante el curso de React JS de la plataforma Coderhouse 
+Es una Single Page Aplication de un sitio web e-commerce basado en productos de artes marciales, aplicando todos los conocimientos adquiridos durante el curso de React JS de la plataforma Coderhouse 
 
 ## Tecnologías utilizadas
 
