@@ -4,12 +4,13 @@ import { useState, useEffect } from 'react'
 import { db } from "../../firebase/dbconection"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { useParams } from 'react-router-dom'
+import { Spinner } from "../spinner/Spinner"
 
 // eslint-disable-next-line react/prop-types
 function ItemListContainer({title}) {
   const [prod, setProd] = useState([]);
+  const [loading, setLoading] = useState(true)
   const {categoryID} = useParams();
-  //const { titulo } = useCartContext()
 
   useEffect(() => {
     let productsCollection = collection(db, "productos")
@@ -23,6 +24,7 @@ function ItemListContainer({title}) {
           ...doc.data()
         }))
         setProd(prodFromDocs)
+        setLoading(false)
       })
       .catch((error) => {
         console.error("Error al obtener los documentos: ", error)
@@ -32,12 +34,14 @@ function ItemListContainer({title}) {
   
     return (
        <>
-         { <div className='container'>
+         <div className='container'>
              <h1 className='tituloContenedor'>
                  {title}
              </h1>
+            {loading ? <Spinner /> :
              <ItemList products={prod}/>
-         </div> }
+            }
+         </div> 
        </>
     )
   

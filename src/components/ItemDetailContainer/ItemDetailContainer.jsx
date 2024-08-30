@@ -7,10 +7,12 @@ import { db } from "../../firebase/dbconection"
 import { collection, getDoc, doc } from "firebase/firestore"
 import { useParams } from 'react-router-dom'
 import ItemDetailList from "../ItemDetailList/ItemDetailList"
+import { Spinner } from "../spinner/Spinner"
 
 
 function ItemDetailContainer({title}) {
   const [prod, setProd] = useState([]);
+  const [loading, setLoading] = useState(true)
   const {categoryID} = useParams();
 
   useEffect(() => {
@@ -20,6 +22,7 @@ function ItemDetailContainer({title}) {
    getDoc(refDoc)
     .then((doc) => {
       setProd({id: doc.id, ...doc.data()})
+      setLoading(false)
     })
     .catch((error) => {
       console.error("Error al obtener el documento: ",error)
@@ -31,10 +34,14 @@ function ItemDetailContainer({title}) {
     return (
         <>
         <div className='container'>
-            <h1 className='tituloContenedor'>
-                {title}
-            </h1>
-            <ItemDetailList products={prod}/>
+          {loading ? <Spinner /> :
+            <>
+              <h1 className='tituloContenedor'>
+                  {title}
+              </h1>
+              <ItemDetailList products={prod}/>
+            </>
+          }
         </div>
         </>
     )
