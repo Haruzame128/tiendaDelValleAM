@@ -43,11 +43,10 @@ npm run dev
 ```
 
 ## Authors
-
-
-
-
 [@haruzame128](https://github.com/Haruzame128)
+
+
+
 [vscode-badge]: https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?logo=visualstudiocode&logoColor=fff&style=for-the-badge
 [vscode-web]: https://code.visualstudio.com/
 [js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge
