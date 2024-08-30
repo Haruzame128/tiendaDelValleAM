@@ -24,3 +24,13 @@ Descripción breve del proyecto y su propósito.
 ## Instalación
 
 Instrucciones para instalar y configurar el proyecto en tu entorno local.
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/Haruzame128/tiendaDelValleAM.git
+
+# Navegar al directorio del proyecto
+cd tiendaDelValleAM
+
+# Instalar dependencias (si aplica)
+npm install
