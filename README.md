@@ -7,9 +7,7 @@ Este es un proyecto de una tienda de E-Commer realizado como proyecto final para
 - [Características](#características)
 - [Tecnologías utilizadas](#tecnologías-utilizadas)
 - [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
+- [Autor](#Autor)
 
 ## Características
 
@@ -21,7 +19,7 @@ Es una Single App Aplication de un sitio web e-commerce basado en productos de a
 | ------------------------ | ------------------------------------------------------------- |
 | **IDEs**                 | [![vscode-badge]][vscode-web]                                 |
 | **Lenguajes y entornos** | [![js-badge]][js-web] [![react-badge]][react-web]             |
-| **Estilos**              | [![bootstrap-badge]][bootstrap-web] [![sass-badge]][sass-web] |
+| **Estilos**              | [![bootstrap-badge]][bootstrap-web]                           |
 | **Utilidades**           | [![vite-badge]][vite-web] [![npm-badge]][npm-web]             |
 
 ## Instalación
@@ -42,7 +40,7 @@ npm install
 npm run dev
 ```
 
-## Authors
+## Autor
 [@haruzame128](https://github.com/Haruzame128)
 
 
