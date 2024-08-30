@@ -1,6 +1,6 @@
 # Tienda Del Valle AM
 
-Descripción breve del proyecto y su propósito.
+Este es un proyecto de una tienda de E-Commer realizado como proyecto final para el curso de Coderhouse de React JS Flex
 
 ## Índice
 
@@ -13,13 +13,16 @@ Descripción breve del proyecto y su propósito.
 
 ## Características
 
-- Listado de características principales del proyecto.
-- Detalle de funcionalidades clave.
-- Ejemplos de uso (si aplica).
+Es una Single App Aplication de un sitio web e-commerce basado en productos de artes marciales, aplicando todos los conocimientos adquiridos durante el curso de React JS de la plataforma Coderhouse 
 
 ## Tecnologías utilizadas
 
-- Enumerar las tecnologías y herramientas que se utilizaron en el desarrollo del proyecto (ej. HTML, CSS, JavaScript, React, Node.js, etc.).
+|                          |                                                               |
+| ------------------------ | ------------------------------------------------------------- |
+| **IDEs**                 | [![vscode-badge]][vscode-web]                                 |
+| **Lenguajes y entornos** | [![js-badge]][js-web] [![react-badge]][react-web]             |
+| **Estilos**              | [![bootstrap-badge]][bootstrap-web] [![sass-badge]][sass-web] |
+| **Utilidades**           | [![vite-badge]][vite-web] [![npm-badge]][npm-web]             |
 
 ## Instalación
 
@@ -34,3 +37,10 @@ cd tiendaDelValleAM
 
 # Instalar dependencias (si aplica)
 npm install
+
+# Ejecutar el Sitio
+npm run dev
+
+## Authors
+
+- [@haruzame128](https://github.com/Haruzame128)
