@@ -40,6 +40,7 @@ npm install
 
 # Ejecutar el Sitio
 npm run dev
+```
 
 ## Authors
 
