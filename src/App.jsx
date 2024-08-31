@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Error404 from "./components/Error404/Error404";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
+import FinalizarCompra from "./components/Cart/FinalizarCompra";
 
 function App() {
   const Welcome = "Bienvenido a Hashi Indumentaria";
@@ -34,6 +35,10 @@ function App() {
               element={<ItemDetailContainer title={"Producto Seleccionado"} />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/cart/finalizarcompra"
+              element={<FinalizarCompra/>}
+            />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </Layout>
