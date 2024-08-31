@@ -2,8 +2,6 @@ import { useCartContext } from "../../context/CartContext";
 import { Table } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebase/dbconection";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import CarritoVacio from "./CarritoVacio"; 
